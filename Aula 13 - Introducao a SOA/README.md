@@ -90,11 +90,16 @@ Service-Oriented Architecture organiza aplicações como um conjunto de serviço
 
 ---
 
-## 11. Perguntas-chave
+## 11. Perguntas-chave e Respostas
 
-- Quando SOA é melhor que microsserviços?
-- Como evitar “ESB antipadrão” (bottleneck central)?
-- Como promover reuso sem criar dependência excessiva?
+**Quando SOA é melhor que microsserviços?**  
+- SOA é melhor em cenários de integração de sistemas legados, com alta necessidade de padronização, governança centralizada, e quando existe uma grande variedade de tecnologias e protocolos distintos a serem integrados.
+
+**Como evitar “ESB antipadrão” (bottleneck central)?**  
+- Use ESB apenas para orquestração e integração. Não coloque lógica de negócio no ESB, distribua funções entre serviços, e adote arquitetura distribuída sempre que possível para evitar ponto único de falha.
+
+**Como promover reuso sem criar dependência excessiva?**  
+- Defina contratos claros, use versionamento bem planejado, documente interfaces e mantenha acoplamento fraco entre serviços, incentivando a reutilização sem dependências rígidas.
 
 ---
 

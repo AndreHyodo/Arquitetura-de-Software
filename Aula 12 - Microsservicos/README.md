@@ -75,11 +75,16 @@ Arquitetura onde uma aplicação é composta por pequenos serviços independente
 
 ---
 
-## 9. Perguntas-chave
+## 9. Perguntas-chave e Respostas
 
-- Como dividir um monolito em microsserviços?
-- Quando não usar microsserviços?
-- Como garantir consistência e rastreabilidade?
+**Como dividir um monolito em microsserviços?**  
+- Analise o domínio de negócio usando DDD (Domain-Driven Design) para identificar bounded contexts, extraia partes menos acopladas do sistema e crie APIs entre elas. Migre gradualmente, começando pelos módulos mais independentes e críticos.
+
+**Quando não usar microsserviços?**  
+- Em sistemas pequenos, equipes reduzidas, aplicações sem necessidade de alta escalabilidade ou disponibilidade, e quando o overhead de complexidade operacional supera os benefícios.
+
+**Como garantir consistência e rastreabilidade?**  
+- Utilize eventos para sincronização entre serviços, implemente sistemas de mensageria confiáveis, centralize logs e use ferramentas de tracing como OpenTelemetry e Jaeger para monitorar fluxos distribuídos.
 
 ---
 

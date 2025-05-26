@@ -3,7 +3,7 @@
 ## 1. Introdução e Conceitos Básicos
 
 **O que é computação em nuvem?**  
-É um modelo de entrega de recursos computacionais (servidores, armazenamento, redes, bancos de dados, serviços de análise, inteligência artificial etc.) pela internet, sob demanda, com escalabilidade automática e cobrança baseada no consumo.  
+É um modelo que oferece recursos computacionais (servidores, armazenamento, banco de dados, redes, software) via internet, sob demanda, com escalabilidade automática e cobrança baseada no consumo.  
 **Exemplo para iniciantes:** Usar o Google Drive para armazenar arquivos é computação em nuvem.
 
 ### **Evolução Histórica**
@@ -17,7 +17,7 @@
 ### **IaaS (Infraestrutura como Serviço)**
 - **Para quem:** Equipes de TI que querem controle sobre servidores e redes.
 - **Responsabilidade:** Cliente gerencia SO, aplicações e dados.
-- **Exemplo:** Amazon EC2, Azure VMs.
+- **Exemplo:** Amazon EC2 permite criar e gerenciar máquinas virtuais.
 - **Dica avançada:** Ideal para arquiteturas que exigem flexibilidade máxima ou integração com sistemas legados.
 
 ### **PaaS (Plataforma como Serviço)**
@@ -36,19 +36,20 @@
 
 ## 3. Tipos de Nuvem
 
-- **Pública:** Compartilhada entre empresas/usuários (AWS, GCP, Azure).
-- **Privada:** Dedicada a uma única organização (OpenStack, VMware).
-- **Híbrida:** Combina nuvem pública e privada, permitindo estratégias como disaster recovery, burst ou segregação de dados sensíveis.
+- **Pública:** Recursos compartilhados entre múltiplos clientes. Barata, escalável, mas menos controle.
+- **Privada:** Infraestrutura exclusiva de uma organização, maior controle e segurança.
+- **Híbrida:** Combinação das anteriores, aproveitando o melhor de cada modelo.
 - **Multicloud:** Uso de múltiplos provedores para evitar dependência (“vendor lock-in”).
 
 ---
 
 ## 4. Vantagens e Benefícios
 
-- **Escalabilidade e Elasticidade:** Adaptação instantânea à demanda.
-- **Custo sob demanda:** Economia, sem gastos com ociosidade.
+- **Escalabilidade e Elasticidade:** Aumenta ou reduz recursos conforme a demanda.
+- **Custo sob demanda:** Paga apenas pelo que usa.
 - **Alta disponibilidade e redundância:** Provedores oferecem SLAs robustos e replicação geográfica.
-- **Automação:** Provisionamento, monitoramento e auto healing.
+- **Redução de complexidade:** Menos preocupação com hardware físico.
+- **Automação:** Provisionamento e monitoramento automáticos.
 
 **Para arquitetos:**  
 - Facilita DevOps, CI/CD, infraestrutura como código e microserviços.
@@ -57,9 +58,10 @@
 
 ## 5. Desafios e Riscos
 
-- **Segurança:** Atenção à criptografia, controle de acesso, compliance (LGPD, GDPR, HIPAA).
-- **Latência e desempenho:** Avalie zonas de disponibilidade e regiões.
-- **Vendor lock-in:** Cuidado com dependências proprietárias.
+- **Segurança:** Dados em servidores de terceiros exigem cuidados extras.
+- **Latência:** Distância entre usuário e servidor pode causar lentidão.
+- **Dependência de fornecedor (vendor lock-in):** Dificuldade em migrar para outro provedor.
+- **Regulamentação:** Atenção às leis de proteção de dados (ex: LGPD).
 - **Custos ocultos:** Tráfego de dados, licenças, recursos não provisionados corretamente.
 
 ---
@@ -68,7 +70,7 @@
 
 - **Serverless (FaaS):** Executa funções sem gerenciar servidores (ex: AWS Lambda, Azure Functions).
 - **Containers e Orquestração:** Docker, Kubernetes, OpenShift.
-- **Edge Computing:** Processamento próximo do usuário final.
+- **Edge Computing:** Processamento de dados próximo ao usuário, reduzindo latência.
 - **Inteligência Artificial e Machine Learning como serviço.**
 
 ---
@@ -82,11 +84,16 @@
 
 ---
 
-## 8. Perguntas para Reflexão
+## 8. Perguntas para Reflexão e Respostas
 
-- Quando migrar para a nuvem faz sentido?
-- Como garantir portabilidade entre diferentes provedores?
-- Quais workloads devem permanecer on-premises?
+**Quando migrar para a nuvem faz sentido?**  
+- A migração faz sentido quando a organização precisa de escalabilidade, elasticidade, quer pagar apenas pelo que usa, necessita de alta disponibilidade, deseja acelerar a inovação ou não quer investir em infraestrutura própria. Também é recomendada quando a manutenção de data centers locais se torna cara e operacionalmente complexa.
+
+**Como garantir portabilidade entre diferentes provedores?**  
+- Utilize containers (ex: Docker), orquestradores portáveis (Kubernetes), padrões abertos, evite serviços proprietários exclusivos, automatize infraestrutura com ferramentas como Terraform e armazene dados em formatos padrão. Automatize deploys e utilize APIs e tecnologias que funcionem em múltiplos ambientes (multicloud).
+
+**Quais workloads devem permanecer on-premises?**  
+- Workloads que exigem latência muito baixa, requisitos de compliance/regulação rígidas, dependência de hardware específico, integração profunda com sistemas locais, dados altamente sensíveis ou quando o custo da nuvem não compensa para cargas estáveis e previsíveis.
 
 ---
 

@@ -79,11 +79,16 @@ Distribui requisições entre múltiplos servidores, evitando sobrecarga e aumen
 
 ---
 
-## 8. Perguntas-chave
+## 8. Perguntas-chave e Respostas
 
-- Como garantir zero downtime durante upgrades?
-- Como lidar com session stickiness em aplicações críticas?
-- Quando usar balanceamento L4 versus L7?
+**Como garantir zero downtime durante upgrades?**  
+- Use estratégias como Blue/Green Deploy, Canary Release e load balancers com múltiplas versões. Implemente health checks automáticos e monitore o rollout. Ferramentas como Kubernetes facilitam upgrades sem downtime.
+
+**Como lidar com session stickiness em aplicações críticas?**  
+- Implemente sticky sessions no load balancer ou armazene sessões em um backend compartilhado como Redis ou Memcached. Avalie se a aplicação pode ser stateless para simplificar a escalabilidade.
+
+**Quando usar balanceamento L4 versus L7?**  
+- Use L4 (TCP/UDP) para balancear conexões de rede em protocolos variados e quando precisa de alta performance e baixa latência. Use L7 (HTTP/HTTPS) quando precisa de regras baseadas em conteúdo, autenticação, roteamento por URL ou headers.
 
 ---
 
